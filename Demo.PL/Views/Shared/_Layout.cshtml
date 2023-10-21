@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="~/css/layout.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+  @*  <link href="~/css/style.css" rel="stylesheet" />*@
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Raleway';
+            font-style: normal;
+            box-shadow: none;
+    }
+
+        body {
+            background-image: url('./img/Cenário de estúdio branco e cinza vazio _ Foto Premium.jpeg');
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            background-size: cover;
+        }
+
+        .navbar {
+            position: relative;
+            z-index: 1;
+            background-color: #fff;
+            overflow: hidden;
+            box-shadow: 0 2px 20px #fff;
+            justify-content: space-around;
+            display: flex;
+        }
+
+            .navbar a {
+                text-transform: capitalize;
+                color: black !important;
+                letter-spacing: 2px;
+                font-size: 20px;
+                /* color: #000; */
+                /* color: #1c72ab;
+            font-size: 18px; */
+                font-weight: 400;
+                text-align: right;
+                text-decoration: none;
+            }
+
+                .navbar a:active,
+                .navbar a:hover,
+                .navbar a:focus {
+                    color: #D6A2E8 !important;
+                    font-weight: 600 !important;
+                }
+
+        .navbar-toggler-icon {
+            width: 50px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top ">
+            <div class="container-fluid ">
+                <div class="logo-container">
+                    <a href="" class="navbar-brand">
+                        <img src="~/img/AP monogram.jpeg" alt="" style="width: 65px;  clip-path:circle(40%);">
+                    </a>
+                </div>
+                <button style="border: none; box-shadow: none;" class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class=" collapse navbar-collapse" id="navbarSupportedContent" style="flex-grow: unset;">
+                    <div class="classy-nav">
+                        <ul class="navbar-nav navbar-nav ms-auto mb-6 mb-lg-0">
+                            <li class="nav-item cn-dropdown-item has-down">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            @*<li class="nav-item cn-dropdown-item has-down">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>*@
+                            <li class="nav-item cn-dropdown-item has-down">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Department" asp-action="Index">Departments</a>
+                            </li>
+                            <li class="nav-item cn-dropdown-item has-down">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="Index">Employees</a>
+                            </li>
+                            <li class="nav-item cn-dropdown-item has-down">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Index">Users</a>
+                            </li>
+                            <li class="nav-item cn-dropdown-item has-down">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Role" asp-action="Index">Roles</a>
+                            </li>
+                            <li class="nav-item cn-dropdown-item has-down">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="SignOut">Log Out</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class=" my-5 text-center text-lg-start footer" style=" background-color: #fff;">
+        <!-- Copyright -->
+        <div class="text-center text-white " style="margin-top: 400px !important; color: #1c72ab !important;">
+            Copyright© SondosHammad @DateTime.Now.Year
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    @RenderSection("ValidationScriptSection" , required: false)
+
+
+</body>
+</html>

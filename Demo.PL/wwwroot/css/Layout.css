@@ -1,0 +1,54 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway';
+    font-style: normal;
+    box-shadow: none;
+}
+
+body {
+    background-image: url('./img/Cenário de estúdio branco e cinza vazio _ Foto Premium.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+}
+
+.navbar {
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 0 2px 20px #fff;
+    justify-content: space-around;
+    display: flex;
+}
+
+    .navbar a {
+        text-transform: capitalize;
+        color: black !important;
+        letter-spacing: 2px;
+        font-size: 20px;
+        /* color: #000; */
+        /* color: #1c72ab;
+            font-size: 18px; */
+        font-weight: 400;
+        text-align: right;
+        text-decoration: none;
+    }
+
+        .navbar a:active,
+        .navbar a:hover,
+        .navbar a:focus {
+            color: #D6A2E8 !important;
+            font-weight: 600 !important;
+        }
+
+.navbar-toggler-icon {
+    width: 50px;
+}
+
+
+

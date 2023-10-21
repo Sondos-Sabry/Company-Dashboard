@@ -1,0 +1,37 @@
+﻿@model DepartmentViewModel
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_Layout";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>Department Details</h1>
+
+<br />
+<br />
+
+
+<section class="container-fluid">
+
+        <div class="face face-top ">
+            <div class="content">
+                <div class="mb-3 mt-3 field-wrapper">
+                    <div class="content mt-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10">
+                            <partial name="PartialViews/DetailsDeleteDepartmentPartialView" />
+
+                                <div class="field-wrapper mb-3 ">
+                                <a asp-action="Edit" asp-route-id="@Model.Id" class=" btn btn-secondary">Edit</a>|
+                                    <a asp-action="Index" class=" btn btn-light">Back To List</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+</section>

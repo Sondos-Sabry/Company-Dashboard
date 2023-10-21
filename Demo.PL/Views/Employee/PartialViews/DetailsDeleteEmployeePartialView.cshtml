@@ -1,0 +1,38 @@
+﻿@model EmployeeViewModel
+<div>
+    <img src="~/Files/Images/@Model.ImageName" class="img-fluid rounded-circle" width="75"/>
+</div>
+
+<div class="field-wrapper mb-3 form-group">
+    <label class="form-label" asp-for="Name"></label>
+    <input class="form-control" readonly asp-for="Name" style=" box-shadow: none;" />
+</div>
+<div class="field-wrapper mb-3 form-group">
+    <label asp-for="Age" for="Age" class="form-label"></label>
+    <input asp-for="Age" readonly class="form-control" style=" box-shadow: none;" />
+</div>
+<div class="field-wrapper mb-3 form-group">
+    <label asp-for="Address" for="Address" class="form-label"></label>
+    <input asp-for="Address" readonly class="form-control" style=" box-shadow: none;" />
+</div>
+<div class="field-wrapper mb-3 form-group">
+    <label asp-for="Salary" for="Salary" class="form-label"></label>
+    <input asp-for="Salary" readonly class="form-control" style=" box-shadow: none;" />
+</div>
+<div class="field-wrapper mb-3 form-group">
+    <label asp-for="Email" for="Email" class="form-label"></label>
+    <input asp-for="Email" readonly class="form-control" style=" box-shadow: none;" />
+</div>
+<div class="field-wrapper mb-3 form-check">
+    <input asp-for="IsActive" class="form-check-input" style=" box-shadow: none;" />
+    <label asp-for="IsActive" readonly for="IsActive" class="form-label"></label>
+</div>
+<div class="field-wrapper mb-3 form-group">
+    <label asp-for="PhoneNumber" for="PhoneNumber" class="form-label"></label>
+    <input asp-for="PhoneNumber" readonly class="form-control" style=" box-shadow: none;" />
+</div>
+<div class="field-wrapper mb-3 form-group">
+    <label asp-for="HiringDate" for="HiringDate" class="form-label"></label>
+    <input asp-for="HiringDate" readonly class="form-control" style=" box-shadow: none;" />
+</div>
+

@@ -1,0 +1,17 @@
+﻿@model DepartmentViewModel
+
+
+<div class="field-wrapper mb-3 form-group">
+    <label asp-for="Code" for="Code" class="form-label"></label>
+    <input asp-for="Code" class="form-control" style=" box-shadow: none;" />
+    <span asp-validation-for="Code" class="text-danger"></span>
+</div>
+<div class="field-wrapper mb-3 form-group">
+    <label class="form-label" asp-for="Name"></label>
+    <input class="form-control" asp-for="Name" style=" box-shadow: none;" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+<div class="field-wrapper mb-3 form-group">
+    <label asp-for="DateOfCreation" class="form-label"></label>
+    <input asp-for="DateOfCreation" class="form-control" style=" box-shadow: none; " />
+</div>

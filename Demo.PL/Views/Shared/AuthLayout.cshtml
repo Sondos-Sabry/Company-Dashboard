@@ -1,0 +1,46 @@
+﻿<html>
+<head>
+	<title>@ViewData["Title"]</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Custom Theme files -->
+    <link href="~/css/style.css" rel="stylesheet" />
+    <!-- //css bootstrap files -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<!-- web font -->
+	<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+	<!-- //web font -->
+</head>
+<body style="background: linear-gradient(to top, #D6A2E8,#D6A2E8)!important;">
+	<!-- main -->
+	<div class="main-w3layouts wrapper">
+		<h1> @ViewData["Title"]  </h1>
+		@RenderBody()
+		<!-- copyright -->
+		<div class="colorlibcopy-agile">
+			<p>© @DateTime.Now.Year Sondos Hammad</p>
+		</div>
+		<!-- //copyright -->
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- //main -->
+
+	@*render side validation*@
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	@RenderSection("ValidationScriptSection" , required: false)
+
+</body>
+</html>

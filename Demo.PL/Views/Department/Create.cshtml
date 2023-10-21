@@ -1,0 +1,41 @@
+﻿@model DepartmentViewModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_Layout";
+    // Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Add New Department</h1>
+<br /><br />
+
+
+<section class="container-fluid">
+    <form asp-action="Create" class="form ">
+        <div class="face face-top ">
+            <div class="content">
+                <div class="mb-3 mt-3 field-wrapper">
+                    <div class="content mt-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10">
+                                <Partial name="PartialViews/CreateEditDepartmentPartialView" />                 
+                                <div class="field-wrapper mb-3 ">
+                                    <button type="submit" class="btn btn-primary login">Add</button> |
+                                    <a asp-action="Index" class=" btn btn-light">Back To List</a>
+                                </div>                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</section>
+
+
+@section ValidationScriptSection{
+    <partial name="_ValidationScriptsPartial" />
+   @* <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+   *@ <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

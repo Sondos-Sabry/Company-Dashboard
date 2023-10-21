@@ -1,0 +1,101 @@
+﻿@model IEnumerable<EmployeeViewModel>
+@{
+
+    ViewData["Title"] = "Index";//dynamic object 
+    //string viewDataMessage = ViewData["Message"] as string; //Enforce type safety...required type conversion (as string)
+    //string viewBagMessage = ViewBag.Message; //can't enforce type safety...not requier type
+
+    Layout = "_Layout";
+}
+
+<h1 >  All Employees</h1>
+<br />
+<br />
+
+    @*<div class="alert alert-warning">
+    @ViewData["Message"]
+</div>
+
+<div class="alert alert-success">
+    @ViewBag.Message
+</div>*@
+
+<a asp-controller="Employee" asp-action="Create" class="btn " style=" background-color: #0c0b0c3b; "> Add New Employee </a>
+<br />
+<br />
+
+@if (!string.IsNullOrEmpty(TempData["Message"] as string))
+{
+    <div class="alert alert-primary">
+        @TempData["Message"]
+    </div>
+}
+<br />
+@if (Model.Count() > 0)
+{
+    <div class=" row justify-content-center align-items-center mt-2">
+
+        <form asp-action="Index" class="row col-8 offset-1">
+            <div class="col-8">
+                <input type="text" class="form-control" id="searchInp" name="searchInp" placeholder="Search By Name" />
+            </div>
+            <div class="col-4">
+                <input type="submit" value="Search" class="btn btn-success "/>
+            </div>
+
+        </form>
+    </div>
+
+    <table class="table table-hover mt-3" style="margin-left: -100px;">
+    <thead>
+        <tr>
+
+            <th scope="col">@Html.DisplayNameFor(e=>e.Name)</th>
+            <th scope="col">@Html.DisplayNameFor(e=>e.Image)</th>
+            <th scope="col">@Html.DisplayNameFor(e=>e.Age)</th>
+            <th scope="col">@Html.DisplayNameFor(e=>e.Address)</th>
+            <th scope="col">@Html.DisplayNameFor(e=>e.Department)</th>
+            <th scope="col">@Html.DisplayNameFor(e=>e.Salary)</th>
+            <th scope="col">@Html.DisplayNameFor(e=>e.Email)</th>
+            <th scope="col">@Html.DisplayNameFor(e=>e.IsActive)</th>
+            <th scope="col">@Html.DisplayNameFor(e=>e.HiringDate)</th>
+            <th scope="col">@Html.DisplayNameFor(e=>e.PhoneNumber)</th>
+            <th>Details</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+            
+        @foreach(var Employee in Model)
+        {
+            <tr>
+                
+                <td>@Employee.Name</td>
+                <td>
+                        <img src="~/Files/Images/@Employee.ImageName" class="img-fluid rounded-circle" width="75" alt="No Image"/>
+                </td>
+                <td>@Employee.Age</td>
+                <td>@Employee.Address</td>
+                <td>@Employee.Department?.Name</td>
+                <td>@Html.DisplayFor(M=>Employee.Salary)</td>
+                <td>@Html.DisplayFor(M=>Employee.Email)</td>
+                <td>@Html.DisplayFor(M=>Employee.IsActive)</td>
+                <td>@Employee.HiringDate</td>
+                <td>@Employee.PhoneNumber</td>
+
+                <partial name="_ButtonsPartial" model="Employee.Id.ToString()"/>
+               </tr>
+}
+        
+    </tbody>
+</table>
+
+}
+else{
+    <div class="mt-4 alert alert-warning">
+        <h2>There Is No Employees :(</h2>
+    </div>
+}
+
+

@@ -1,0 +1,42 @@
+﻿@model RoleViewModel
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>Edit User</h1>
+<br />
+<br />
+
+
+<section class="container-fluid">
+    <form asp-action="Edit" enctype="multipart/form-data" class="form ">
+        <div asp-validation-summary="All"></div>
+        <div class="face face-top ">
+            <div class="content">
+                <div class="mb-3 mt-3 field-wrapper">
+                    <div class="content mt-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10">
+                                <Partial name="PartialViews/CreateEditRolePartialView" />
+                                <div class="field-wrapper mb-3 ">
+                                    <input type="submit" value="Save" class="btn btn-primary " />
+                                    <a asp-action="Index" class=" btn btn-light">Back To List</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</section>
+
+@section ValidationScriptSection{
+    <partial name="_ValidationScriptsPartial" />
+    @*<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    *@<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
